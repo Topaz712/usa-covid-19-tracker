@@ -27,9 +27,7 @@ module Scraper
       deaths = row.css('td')[4].text.strip
       recoveries = row.css('td')[6].text.strip
 
-      if(name != 'District of Columbia')
-      State.new(name, cases, deaths, recoveries)
-      end
+      State.new(name, cases, deaths, recoveries) if name != 'District of Columbia'
     end
   end
 
